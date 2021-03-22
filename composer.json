@@ -1,0 +1,18 @@
+{
+    "name": "fleflis/carbon-field-slider",
+    "description": "Carbon Fields extension, that adds a Slider field type.",
+    "keywords": ["wordpress", "carbon-field", "carbon-field-slider"],
+    "homepage": "https://fleflis.dev",
+    "type": "library",
+    "license": "GPL-2.0+",
+    "authors": [],
+    "require": {},
+    "autoload": {
+        "files": [
+            "field.php"
+        ],
+        "psr-4": {
+            "Carbon_Field_Slider\\": "core/"
+        }
+    }
+}
