@@ -4,8 +4,15 @@
 import { Component } from '@wordpress/element';
 
 class SliderField extends Component {
-	state = {
-		value: 50,
+
+	/**
+	 *
+	 * @param {React.ChangeEvent<HTMLInputElement>} e Event
+	 */
+	handleChange = ( e ) => {
+		const val = e.target.value;
+		const {id, onChange} = this.props;
+		onChange(id, val);
 	}
 
 	/**
@@ -14,11 +21,24 @@ class SliderField extends Component {
 	 * @return {Object}
 	 */
 	render() {
+		console.log(this.props);
+		const { id, name, value, field } = this.props
 		return (
 			<>
-				<span>A sample slider field. Value: {this.state.value}</span>
-				<input type="range" value={this.state.value} onChange={(e) => {this.setState({value: e.target.value})}} min={0} max={100} name="" id=""/>
+				<input
+					type="range"
+					id={id}
+					name={name}
+					value={value}
+					onChange={this.handleChange}
+					className="range-slider"
+					{ ...field.attributes }
+				/>
+				<br/>
+				<strong>{value}%</strong>
 			</>
+
+
 		);
 	}
 }
