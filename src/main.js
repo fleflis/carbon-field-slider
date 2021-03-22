@@ -11,7 +11,7 @@ class SliderField extends Component {
 	 */
 	render() {
 		return (
-			<span>I'm your custom Carbon Fields field.</span>
+			<input type="range" name="" id=""/>
 		);
 	}
 }
